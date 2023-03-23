@@ -9,14 +9,10 @@ import { Provider } from "react-redux";
 // Actions - Säger åt din reducer vad du vill göra
 // Dispather - Triggar en action
 
-const store = legacy_createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
-ReactDOM.createRoot(document.getElementById("root")).render < Provider >
+ReactDOM.createRoot(document.getElementById("root")).render 
 (
-  <Provider>
+ 
     <App />
-  </Provider>
+ 
 );
