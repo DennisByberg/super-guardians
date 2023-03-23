@@ -1,7 +1,6 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Menu from "./Pages/Menu/Menu";
-import Cart from "./Pages/Cart/Cart";
 import About from "./Pages/About/About";
 import Status from "./Pages/Status/Status";
 
@@ -11,10 +10,6 @@ function App() {
     {
       path: "/",
       element: <Menu />,
-    },
-    {
-      path: "/Cart",
-      element: <Cart />,
     },
     {
       path: "/About",

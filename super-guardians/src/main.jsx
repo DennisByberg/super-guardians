@@ -9,10 +9,4 @@ import { Provider } from "react-redux";
 // Actions - Säger åt din reducer vad du vill göra
 // Dispather - Triggar en action
 
-
-ReactDOM.createRoot(document.getElementById("root")).render 
-(
- 
-    <App />
- 
-);
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
