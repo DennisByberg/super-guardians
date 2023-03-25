@@ -1,5 +1,11 @@
 :root {
-  /* --orange: #e2881a; */
+  --black: #000000;
+  --white: #ffffff;
+  --orange: #e5674e;
+  --pink: #f3e4e1;
+  --lightGreen: #58bf94;
+  --darkGreen: #0e927d;
+  --brown: #2f2926;
 }
 
 * {
@@ -10,5 +16,4 @@
 }
 
 body {
-  /* background-color: var(--orange); */
 }
