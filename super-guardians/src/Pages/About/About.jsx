@@ -1,7 +1,13 @@
 import "./About.css";
+import Header from "../../Components/Header/Header";
 
 function About() {
-  return <section>About</section>;
+  return (
+    <section>
+      <Header />
+      About
+    </section>
+  );
 }
 
 export default About;

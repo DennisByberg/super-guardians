@@ -1,3 +1,24 @@
 .menu {
+  font-family: "PT Serif", serif;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-top: 0.6rem;
+}
+
+.coffee-components-list {
+  list-style: none;
+  width: 100%;
+  padding: 1rem 2rem;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

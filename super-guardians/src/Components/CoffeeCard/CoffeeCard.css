@@ -1,0 +1,48 @@
+.coffee-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.coffee-card__title-and-description-container {
+  margin-left: 1rem;
+  margin-right: auto;
+}
+
+.coffee-card__add-button {
+  border: none;
+  height: 40px;
+  width: 40px;
+  background-color: var(--brown);
+  padding: 0.6rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.coffee-card__add-button:hover {
+  transform: scale(1.1);
+  background-color: #211e1c;
+}
+
+.coffee-card__add-button:active {
+  transform: translateY(1px);
+}
+
+.coffee-card__add-button > img {
+}
+
+.coffee-card__title {
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.coffee-card__description {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.coffee-card__price {
+  font-weight: 700;
+  font-size: 23px;
+}
