@@ -1,9 +1,23 @@
 import "./CoffeeCard.css";
+import { add } from "../../Redux/Actions/addAction";
+import { useDispatch } from "react-redux";
 
 const CoffeeCard = ({ title, description, price }) => {
+  const coffeeObject = {
+    title,
+    description,
+    price,
+  };
+  const dispatch = useDispatch();
+
+  function addToCart() {
+    console.log(coffeeObject);
+    dispatch(add(coffeeObject));
+  }
+
   return (
     <li className="coffee-card">
-      <button className="coffee-card__add-button">
+      <button onClick={addToCart} className="coffee-card__add-button">
         <img src="/src/assets/add.svg" />
       </button>
       <div className="coffee-card__title-and-description-container">
