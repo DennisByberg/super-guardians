@@ -1,6 +1,7 @@
 import "./Menu.css";
 import { useState, useEffect } from "react";
 import LoadingSlider from "../../Components/LoadingSlider/LoadingSlider";
+import Header from "../../Components/Header/Header";
 
 function Menu() {
   const [showLoadingSlide, setShowLoadingSlide] = useState(true);
@@ -8,7 +9,7 @@ function Menu() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowLoadingSlide(false);
-    }, 9000); // hur många ms tills slidern ska försvinna...
+    }, 1); // hur många ms tills slidern ska försvinna...
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -16,7 +17,7 @@ function Menu() {
   return (
     <section className="menu">
       {showLoadingSlide && <LoadingSlider />}
-      MENU
+      <Header />
     </section>
   );
 }

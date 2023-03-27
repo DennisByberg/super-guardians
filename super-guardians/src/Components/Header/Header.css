@@ -1,0 +1,47 @@
+header {
+  border: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* Saker navigation och cart containern har tillsammans... */
+.header__navigation-container,
+.header__cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 1rem;
+
+  height: 40px;
+  width: 40px;
+
+  transition: 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.header__navigation-container {
+  border: 1px solid black;
+  background-color: white;
+  z-index: 1;
+}
+
+.header__cart-container {
+  background-color: var(--brown);
+}
+
+.header__navigation-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.header__cart-logo {
+  height: 15px;
+  width: 15px;
+}
+.header__navigation-container:hover,
+.header__cart-container:hover {
+  transform: scale(1.1);
+}
