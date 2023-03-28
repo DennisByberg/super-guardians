@@ -1,5 +1,8 @@
 header {
-  border: 3px solid black;
+  background-image: url(src/assets/graphics-header.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
