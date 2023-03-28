@@ -1,9 +1,11 @@
 import "./Header.css";
 import NavigationSlider from "../NavigationSlider/NavigationSlider";
+import Cart from "../Cart/Cart";
 import { useState } from "react";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [navigationSRC, setNavigationSRC] = useState(
     "src/assets/navicon-burger.svg"
   );
@@ -18,15 +20,20 @@ const Header = () => {
     );
   }
 
+  function handleCart() {
+    setIsCartOpen(!isCartOpen);
+  }
+
   return (
     <header>
       <div onClick={handleNavigation} className="header__navigation-container">
         <img className="header__navigation-icon" src={navigationSRC} />
       </div>
-      <div className="header__cart-container">
+      <div onClick={handleCart} className="header__cart-container">
         <img className="header__cart-logo" src="src/assets/bag.svg" />
       </div>
       {isNavOpen ? <NavigationSlider /> : null}
+      {isCartOpen ? <Cart /> : null}
     </header>
   );
 };

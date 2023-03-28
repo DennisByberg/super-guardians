@@ -3,15 +3,14 @@ import { add } from "../../Redux/Actions/addAction";
 import { useDispatch } from "react-redux";
 
 const CoffeeCard = ({ title, description, price }) => {
-  const coffeeObject = {
-    title,
-    description,
-    price,
-  };
   const dispatch = useDispatch();
 
   function addToCart() {
-    console.log(coffeeObject);
+    const coffeeObject = {
+      title: title,
+      description: description,
+      price: price,
+    };
     dispatch(add(coffeeObject));
   }
 

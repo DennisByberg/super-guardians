@@ -1,6 +1,5 @@
 const initialState = {
   cart: [],
-  product: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,9 +7,8 @@ const reducer = (state = initialState, action) => {
     case "ADD":
       return {
         ...state,
-        cart: state.cart.concat([action.payload]),
+        cart: state.cart.concat(action.payload),
       };
-
     default:
       return state;
   }

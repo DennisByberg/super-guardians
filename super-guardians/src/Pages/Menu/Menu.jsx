@@ -17,7 +17,6 @@ function Menu() {
       setCoffeeMenu(data.menu);
     }
     getCoffeesFromAPI();
-    console.log(coffeeMenu);
   }, []);
 
   const coffeeComponents = coffeeMenu.map((coffee) => {
