@@ -9,6 +9,7 @@
   --lightGreen: #58bf94;
   --darkGreen: #0e927d;
   --brown: #2f2926;
+  --lightWhite:rgba(255, 255, 255, 0.5);
 }
 
 * {
