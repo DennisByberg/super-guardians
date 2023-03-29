@@ -8,10 +8,12 @@ function ViewCart() {
 
   const [cartItems, setCartItems] = useState([]);
 
+  let id = 0;
   useEffect(() => {
     const items = cartArray.map((item) => {
+      id++;
       return (
-        <li key={item.id}>
+        <li key={id}>
           <p>{item.title}</p>
           <p>{item.price}</p>
         </li>
