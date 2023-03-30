@@ -1,0 +1,13 @@
+.cart_Container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    background-color: white;
+    border-radius: 10px;
+  
+    
+}
+
+
+
+

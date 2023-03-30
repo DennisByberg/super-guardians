@@ -25,11 +25,17 @@ function Cart() {
 
   return (
     <section className="cart">
+      <div className="order_Cart">
       <h1 className="cart__title">Din Beställning</h1>
       <ViewCart />
+      </div>
+      <div className="totalPrice_Button">
+      <h1>Total #kr</h1>
+      <p>inkl moms + drönarleverans</p>
       <button onClick={takeMyMoney} className="cart__button">
         Take my money!
       </button>
+      </div>
     </section>
   );
 }
