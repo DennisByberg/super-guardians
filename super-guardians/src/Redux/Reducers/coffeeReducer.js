@@ -9,6 +9,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.concat(action.payload),
       };
+    case "CLEAR_CART":
+      return {
+        ...state,
+        cart: (state.cart = []),
+      };
     default:
       return state;
   }

@@ -5,4 +5,11 @@ function add(value) {
   };
 }
 
-export { add };
+function clearCart(value) {
+  return {
+    type: "CLEAR_CART",
+    payload: value,
+  };
+}
+
+export { add, clearCart };
