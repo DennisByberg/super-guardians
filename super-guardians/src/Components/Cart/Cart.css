@@ -46,3 +46,14 @@
   
   margin: 1rem;
 }
+
+h1.cart_Product::after {
+
+} 
+
+
+dl { width: 400px }
+dt { float: left; width: 300px; overflow: hidden; white-space: nowrap }
+dd { float: left; width: 100px; overflow: hidden }
+
+dt:after { content: " .................................................................................." }

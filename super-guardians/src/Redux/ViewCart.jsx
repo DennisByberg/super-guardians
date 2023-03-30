@@ -15,11 +15,7 @@ function ViewCart() {
       id++;
       return (
         <li className="cart_Container" key={id}>
-          
           <h1 className="cart_Product">{item.title}</h1>
-          <div class="dot"></div>
-     
-        
           <p className="cart_Price">{item.price}kr</p>
         </li>
       );
