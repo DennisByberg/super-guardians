@@ -21,7 +21,7 @@ function Cart() {
 
   function takeMyMoney() {
     const cartToSend = cart.map((cartObject) => {
-      
+  
       return {
         name: cartObject.title,
         price: cartObject.price,
@@ -32,28 +32,24 @@ function Cart() {
     } else {
       navigate("/Status", { state: { cartToSend } });
     }
-
   }
   
-  
-
   return (
     <section className="cart">
       <div className="order_Cart">
       <h1 className="cart__title">Din Beställning</h1>
       <ViewCart />
       </div>
-      <div className="totalPrice_Button">
-      <h1>Totalt pris {total} kr</h1>
+
+      <div className="totalPrice_Button" >
+      <h1 className="dot_Cart">Totalt pris {total} kr </h1>
       <p>inkl moms + drönarleverans</p>
       <button onClick={takeMyMoney} className="cart__button">
         Take my money!
       </button>
       </div>
-
     </section>
   );
-  
 }
 
 export default Cart;
