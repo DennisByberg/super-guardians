@@ -14,7 +14,7 @@ function ViewCart() {
       id++;
       return (
         <li key={id}>
-          <p>{item.title}</p>
+          <p>{item.name}</p>
           <p>{item.price}</p>
         </li>
       );

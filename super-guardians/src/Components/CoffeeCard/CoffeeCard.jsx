@@ -7,14 +7,11 @@ const CoffeeCard = ({ title, description, price }) => {
 
   function addToCart() {
     const coffeeObject = {
-      title: title,
-      description: description,
+      name: title,
       price: price,
     };
     dispatch(add(coffeeObject));
-
   }
-
 
   return (
     <li className="coffee-card">
@@ -29,6 +26,5 @@ const CoffeeCard = ({ title, description, price }) => {
     </li>
   );
 };
-
 
 export default CoffeeCard;

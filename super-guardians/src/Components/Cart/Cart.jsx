@@ -1,26 +1,52 @@
 import "./Cart.css";
 import ViewCart from "../../Redux/ViewCart";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { updateTime } from "../../Redux/Actions/addAction";
 
 function Cart() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  let getData = "";
+
   const cart = useSelector((state) => {
     return state.cart;
   });
 
-  function takeMyMoney() {
-    const cartToSend = cart.map((cartObject) => {
-      return {
-        name: cartObject.title,
-        price: cartObject.price,
-      };
-    });
-    if (cartToSend.length === 0) {
-      alert("Det finns inget i card att skicka");
+  useEffect(() => {
+    if (cart.length) {
+      getOrder();
     } else {
-      navigate("/Status", { state: { cartToSend } });
+      console.log("Inget att skicka");
     }
+
+    async function getOrder() {
+      const body = {
+        details: {
+          order: cart,
+        },
+      };
+      const response = await fetch(
+        "https://airbean.awesomo.dev/api/beans/order",
+        {
+          method: "POST",
+          body: JSON.stringify(body),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+      getData = data.orderNr;
+    }
+  }, []);
+
+  function takeMyMoney() {
+    console.log(getData);
+    dispatch(updateTime(getData));
+    navigate("./Status");
   }
 
   return (

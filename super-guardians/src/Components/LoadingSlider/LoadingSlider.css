@@ -11,7 +11,7 @@
   width: 100vw;
   background-color: var(--darkGreen);
 
-  animation: fadeOut ease-out 10s;
+  animation: fadeOut ease-out 3.3s;
 }
 
 .loading-slider__right-graphics {

@@ -3,10 +3,16 @@ import { useState, useEffect } from "react";
 import LoadingSlider from "../../Components/LoadingSlider/LoadingSlider";
 import Header from "../../Components/Header/Header";
 import CoffeeCard from "../../Components/CoffeeCard/CoffeeCard";
+import { setIsLoadingPageShowedToTrue } from "../../Redux/Actions/addAction";
+import { useSelector, useDispatch } from "react-redux";
 
 function Menu() {
   const [showLoadingSlide, setShowLoadingSlide] = useState(true);
   const [coffeeMenu, setCoffeeMenu] = useState([]);
+  const isLoadingPageShowed = useSelector((state) => {
+    return state.isLoadingPageShowed;
+  });
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const coffeeURL = "https://airbean.awesomo.dev/api/beans/";
@@ -34,14 +40,15 @@ function Menu() {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowLoadingSlide(false);
-    }, 1000); // hur många ms tills slidern ska försvinna...
+      dispatch(setIsLoadingPageShowedToTrue());
+    }, 3000); // hur många ms tills slidern ska försvinna...
 
     return () => clearTimeout(timeoutId);
   }, []);
 
   return (
     <section className="menu">
-      {showLoadingSlide && <LoadingSlider />}
+      {showLoadingSlide && !isLoadingPageShowed && <LoadingSlider />}
       <Header />
       <h1 className="menu__title">Meny</h1>
       <ul className="coffee-components-list">{coffeeComponents}</ul>

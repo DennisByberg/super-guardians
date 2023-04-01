@@ -40,30 +40,29 @@ header {
 }
 
 .header__cart-logo {
-  margin-left: 20px;
+  margin-left: 24px;
   height: 15px;
   width: 15px;
 }
 
-span.header__cart-count{
-  background-color: #E5674E;
+span.header__cart-count {
+  background-color: #e5674e;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  padding: 13px;
+  width: 20px;
+  height: 20px;
+  padding: 12px;
   display: flex;
   margin-bottom: 30px;
   color: white;
 }
 
-span.header__cart-count p{
+span.header__cart-count p {
   position: absolute;
   margin-left: -4px;
-align-self: center;
+  align-self: center;
 }
-
 
 .header__navigation-container:hover,
 .header__cart-container:hover {
