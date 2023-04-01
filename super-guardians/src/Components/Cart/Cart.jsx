@@ -8,7 +8,7 @@ import { updateTime } from "../../Redux/Actions/addAction";
 function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  let getData = "";
+  let orderNumberData = "";
 
   const cart = useSelector((state) => {
     return state.cart;
@@ -39,13 +39,13 @@ function Cart() {
       );
       const data = await response.json();
       console.log(data);
-      getData = data.orderNr;
+      orderNumberData = data.orderNr;
     }
   }, []);
 
   function takeMyMoney() {
-    console.log(getData);
-    dispatch(updateTime(getData));
+    console.log(orderNumberData);
+    dispatch(updateTime(orderNumberData));
     navigate("./Status");
   }
 

@@ -29,9 +29,6 @@
   transform: translateY(1px);
 }
 
-.coffee-card__add-button > img {
-}
-
 .coffee-card__title {
   font-weight: 700;
   font-size: 23px;

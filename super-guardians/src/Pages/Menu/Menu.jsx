@@ -36,7 +36,7 @@ function Menu() {
     );
   });
 
-  // Intro Slider Timer
+  // Loading Slider Timer...
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setShowLoadingSlide(false);
