@@ -35,12 +35,12 @@
 }
 
 .order_Cart {
-  display:flex;
+  display: flex;
   flex-direction: column;
   width: 332px;
 }
 
-.totalPrice_Button{
+.totalPrice_Button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,18 +48,17 @@
 }
 
 .dot_Container {
-   width: 400px 
+  width: 400px;
 }
 
-h1.cart_Product { 
-  float: left; 
+h1.cart_Product {
+  float: left;
   width: 300px;
   max-width: max-content;
-  overflow: hidden; 
-  white-space: nowrap
- }
+  overflow: hidden;
+  white-space: nowrap;
+}
 
-  h1.cart_Product:after {
-     content: " ..................................................................................";
-     }
-  
+h1.cart_Product:after {
+  content: " ..................................................................................";
+}
