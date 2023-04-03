@@ -12,27 +12,33 @@ function ViewCart() {
   const dispatch = useDispatch();
   const [cartItems, setCartItems] = useState([]);
 
-  function handleDelete(id) {
-    dispatch(deleteCoffee(id));
+  function handleDelete(item) {
+    console.log(item.id);
+    dispatch(deleteCoffee(item.id));
   }
 
-  let id = 0;
   useEffect(() => {
-    const items = cartArray.map((item) => {
-      id++;
+    const items = cartArray.map((item, index) => {
+      const id = index + 1;
+      item.id = id;
       return (
-        <li className="cart_Container" key={id}>
-          <button
-            onClick={() => handleDelete(item.id)}
-            className="cart__delete-btn"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/43/43625.png"
-              alt=""
-            />
-          </button>
-          <h1 className="cart_Product">{item.name}</h1>
-          <p className="cart_Price">{item.price}kr</p>
+        <li className="cart_Container" key={item.id}>
+          <div className="view-cart__button-and-name-container">
+            <h1 className="cart_Product">{item.name}</h1>
+            <div className="view-cart__dot-container"></div>
+          </div>
+          <div className="view-cart__button-and-price-container">
+            <button
+              onClick={() => handleDelete(item)}
+              className="cart__delete-btn"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/9248/9248491.png"
+                alt=""
+              />
+            </button>
+            <p className="cart_Price">{item.price}kr</p>
+          </div>
         </li>
       );
     });

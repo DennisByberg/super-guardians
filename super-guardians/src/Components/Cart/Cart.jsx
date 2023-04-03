@@ -22,7 +22,6 @@ function Cart() {
     cart.map((cartItem) => {
       tempTotal += cartItem.price;
     });
-    console.log(tempTotal);
     setTotalPrice(tempTotal);
   }
 
@@ -34,7 +33,7 @@ function Cart() {
     if (cart.length) {
       getOrder();
     } else {
-      console.log("Inget att skicka");
+      // console.log("Inget att skicka");
     }
 
     async function getOrder() {
@@ -54,13 +53,11 @@ function Cart() {
         }
       );
       const data = await response.json();
-      console.log(data);
       setOrderNumberData(data.orderNr);
     }
   }, []);
 
   function takeMyMoney() {
-    console.log(orderNumberData);
     dispatch(updateTime(orderNumberData));
     navigate("./Status");
   }

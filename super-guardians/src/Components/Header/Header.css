@@ -18,8 +18,8 @@ header {
   justify-content: center;
   border-radius: 100%;
   padding: 1rem;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   transition: 100ms ease-in-out;
   cursor: pointer;
 }
@@ -48,8 +48,6 @@ header {
 span.header__cart-count {
   background-color: #e5674e;
   border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
   width: 20px;
   height: 20px;
   padding: 12px;
