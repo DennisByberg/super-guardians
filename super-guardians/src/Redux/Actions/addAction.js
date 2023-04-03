@@ -12,6 +12,13 @@ function clearCart(value) {
   };
 }
 
+function deleteCoffee(value) {
+  return {
+    type: "DELETE",
+    payload: value,
+  };
+}
+
 function updateTime(value) {
   return {
     type: "UPDATE_TIME",
@@ -26,4 +33,10 @@ function setIsLoadingPageShowedToTrue(value) {
   };
 }
 
-export { add, clearCart, updateTime, setIsLoadingPageShowedToTrue };
+export {
+  add,
+  clearCart,
+  updateTime,
+  setIsLoadingPageShowedToTrue,
+  deleteCoffee,
+};

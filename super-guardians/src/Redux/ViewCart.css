@@ -1,13 +1,25 @@
 .cart_Container {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    background-color: white;
-    border-radius: 10px;
-  
-    
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 10px;
 }
 
+.cart__delete-btn {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 100%;
+  border: none;
+}
 
+.cart__delete-btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
-
+.cart__delete-btn img {
+  width: 60%;
+  height: 100%;
+}

@@ -27,6 +27,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoadingPageShowed: (state.isLoadingPageShowed = true),
       };
+
+    case "DELETE":
+      const index = state.cart.findIndex((item) => item.id === action.payload);
+      const newCart = [...state.cart];
+      newCart.splice(index, 1);
+      return {
+        ...state,
+        cart: newCart,
+      };
+
     default:
       return state;
   }

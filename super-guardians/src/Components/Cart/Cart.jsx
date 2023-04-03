@@ -28,7 +28,9 @@ function Cart() {
 
   useEffect(() => {
     calculateTotalPrice(); // calculate.
+  }, [cart]);
 
+  useEffect(() => {
     if (cart.length) {
       getOrder();
     } else {
