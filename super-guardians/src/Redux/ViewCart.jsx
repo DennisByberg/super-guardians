@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import "./ViewCart.css";
 
 function ViewCart() {
   const cartArray = useSelector((state) => {
@@ -13,9 +14,9 @@ function ViewCart() {
     const items = cartArray.map((item) => {
       id++;
       return (
-        <li key={id}>
-          <p>{item.name}</p>
-          <p>{item.price}</p>
+        <li className="cart_Container" key={id}>
+          <h1 className="cart_Product">{item.name}</h1>
+          <p className="cart_Price">{item.price}kr</p>
         </li>
       );
     });

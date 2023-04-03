@@ -2,19 +2,27 @@ import "./Cart.css";
 import ViewCart from "../../Redux/ViewCart";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
 import { updateTime } from "../../Redux/Actions/addAction";
+import { useEffect, useState } from "react";
 
 function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   let orderNumberData = "";
+  const [total, setTotal] = useState(0);
 
   const cart = useSelector((state) => {
     return state.cart;
   });
 
   useEffect(() => {
+    let temp = 0;
+    cart.map((cartObject) => {
+      temp += cartObject.price;
+    });
+    setTotal(temp);
+
     if (cart.length) {
       getOrder();
     } else {
@@ -51,11 +59,18 @@ function Cart() {
 
   return (
     <section className="cart">
-      <h1 className="cart__title">Din Beställning</h1>
-      <ViewCart />
-      <button onClick={takeMyMoney} className="cart__button">
-        Take my money!
-      </button>
+      <div className="order_Cart">
+        <h1 className="cart__title">Din Beställning</h1>
+        <ViewCart />
+      </div>
+
+      <div className="totalPrice_Button">
+        <h1 className="dot_Cart">Totalt pris {total} kr </h1>
+        <p>inkl moms + drönarleverans</p>
+        <button onClick={takeMyMoney} className="cart__button">
+          Take my money!
+        </button>
+      </div>
     </section>
   );
 }
