@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: var(--orange);
 }
 
@@ -14,6 +13,8 @@
   display: flex;
   gap: 0.5rem;
   flex-direction: row;
+  padding: 3rem;
+  
 }
 .status_Number_Text {
   color: var(--lightWhite);
@@ -25,22 +26,28 @@
 /* ends*/
 
 .status_Timer_Text {
+  display: flex;
   color: white;
+  padding-top: 5rem;
+  font-size: 36px;
+  max-width: 300px;
+  text-align: center;
 }
 .status_Timer {
   color: white;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
 }
 .button_Status {
   text-decoration: none;
   box-sizing: border-box;
-
   border: solid 1px;
   border-radius: 4rem;
   border-color: var(--white);
   background-color: var(--white);
   padding: 1rem 1rem;
   font-family: "PT Serif", serif;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
   color: var(--black);
 }
