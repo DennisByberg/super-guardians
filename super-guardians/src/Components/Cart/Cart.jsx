@@ -9,19 +9,25 @@ function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  let orderNumberData = "";
-  const [total, setTotal] = useState(0);
+  const [orderNumberData, setOrderNumberData] = useState("");
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const cart = useSelector((state) => {
     return state.cart;
   });
 
-  useEffect(() => {
-    let temp = 0;
-    cart.map((cartObject) => {
-      temp += cartObject.price;
+  // Calculate the total price...
+  function calculateTotalPrice() {
+    let tempTotal = 0;
+    cart.map((cartItem) => {
+      tempTotal += cartItem.price;
     });
-    setTotal(temp);
+    console.log(tempTotal);
+    setTotalPrice(tempTotal);
+  }
+
+  useEffect(() => {
+    calculateTotalPrice(); // calculate.
 
     if (cart.length) {
       getOrder();
@@ -47,7 +53,7 @@ function Cart() {
       );
       const data = await response.json();
       console.log(data);
-      orderNumberData = data.orderNr;
+      setOrderNumberData(data.orderNr);
     }
   }, []);
 
@@ -65,7 +71,7 @@ function Cart() {
       </div>
 
       <div className="totalPrice_Button">
-        <h1 className="dot_Cart">Totalt pris {total} kr </h1>
+        <h1 className="dot_Cart">Totalt pris {totalPrice} kr </h1>
         <p>inkl moms + drönarleverans</p>
         <button onClick={takeMyMoney} className="cart__button">
           Take my money!

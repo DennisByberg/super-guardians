@@ -15,14 +15,16 @@ function Status() {
 
   // This code uses the useEffect hook to fetch data from an API endpoint and update the state of the component. Specifically, it fetches the estimated time of arrival (ETA) for an order with a given order number using the Airbean API. The useEffect hook is used to ensure that the data is fetched and the state is updated when the component mounts. The fetched ETA is then stored in the state variable updateTime using the setUpdateTime function.
   useEffect(() => {
-    async function getTime() {
-      const response = await fetch(
-        `https://airbean.awesomo.dev/api/beans/order/status/${orderNumb}`
-      );
-      const data = await response.json();
-      setUpdateTime(data.eta);
+    if (orderNumb) {
+      async function getTime() {
+        const response = await fetch(
+          `https://airbean.awesomo.dev/api/beans/order/status/${orderNumb}`
+        );
+        const data = await response.json();
+        setUpdateTime(data.eta);
+      }
+      getTime();
     }
-    getTime();
   }, []);
 
   function clear() {
